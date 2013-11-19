@@ -3,7 +3,8 @@
 //  MetamacrosGenerator
 //
 //  Created by Egor Chiglintsev on 19/11/13.
-//  Copyright (c) 2013 Sibers. All rights reserved.
+//  Copyright (c) 2013 Egor Chiglintsev.
+//  Released under the MIT license.
 //
 
 #include <stdio.h>
