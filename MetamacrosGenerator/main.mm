@@ -337,41 +337,198 @@ void print_implementation_metamacro_drop(int limit)
 
 
 #pragma mark -
+#pragma mark metamacro_dec
+
+void print_metamacro_dec(int limit)
+{
+    NSCParameterAssert(limit >= 20);
+    ____();
+    printf("/**\n");
+    printf(" * Decrements VAL, which must be a number between 0 and %d, inclusive.\n", limit);
+    printf(" *\n");
+    printf(" * This is primarily useful when dealing with indexes and counts in\n");
+    printf(" * metaprogramming.\n");
+    printf(" */\n");
+    printf("#define metamacro_dec(VAL) \\\n");
+    printf("    metamacro_at(VAL, ");
+    
+    for (int i = -1; i < limit-1; ++i)
+    {
+        printf("%d, ", i);
+    }
+    
+    printf("%d)\n", limit-1);
+    ____(YES);
+}
+
+
+#pragma mark -
+#pragma mark metamacro_inc
+
+void print_metamacro_inc(int limit)
+{
+    ____();
+    printf("/**\n");
+    printf(" * Increments VAL, which must be a number between 0 and %d, inclusive.\n", limit);
+    printf(" *\n");
+    printf(" * This is primarily useful when dealing with indexes and counts in\n");
+    printf(" * metaprogramming.\n");
+    printf(" */\n");
+    printf("#define metamacro_inc(VAL) \\\n");
+    printf("    metamacro_at(VAL, ");
+    
+    for (int i = 1; i <= limit; ++i)
+    {
+        printf("%d, ", i);
+    }
+    
+    printf("%d)\n", limit+1);
+    ____(YES);
+}
+
+
+#pragma mark -
+#pragma mark metamacro_is_even
+
+void print_metamacro_is_even(int limit)
+{
+    ____();
+    printf("/**\n");
+    printf(" * Returns 1 if N is an even number, or 0 otherwise.\n");
+    printf(" * N must be between 0 and %d, inclusive.\n", limit);
+    printf(" *\n");
+    printf(" * For the purposes of this test, zero is considered even.\n");
+    printf(" */\n");
+    printf("#define metamacro_is_even(N) \\\n");
+    printf("metamacro_at(N, ");
+    
+    for (int i = 0; i < limit; ++i)
+    {
+        printf("%d, ", (i % 2) == 0);
+    }
+    
+    printf("%d)\n", (limit % 2) == 0);
+    ____(YES);
+}
+
+
+#pragma mark -
+#pragma mark metamacro_not
+
+void print_metamacro_not(void)
+{
+    ____();
+    printf("/**\n");
+    printf(" * Returns the logical NOT of B, which must be the number zero or one.\n");
+    printf(" */\n");
+    printf("#define metamacro_not(B) \\\n");
+    printf("    metamacro_at(B, 1, 0)\n");
+    ____(YES);
+}
+
+
+#pragma mark -
+#pragma mark metamacro_foreach_cxt
+
+void print_interface_metamacro_foreach_cxt(int limit)
+{
+    ____();
+    printf("/**\n");
+    printf(" * For each consecutive variadic argument (up to %d), MACRO is passed the\n", limit);
+    printf(" * zero-based index of the current argument, CONTEXT, and then the argument\n");
+    printf(" * itself. The results of adjoining invocations of MACRO are then separated by\n");
+    printf(" * SEP.\n");
+    printf(" *\n");
+    printf(" * Inspired by P99: http://p99.gforge.inria.fr\n");
+    printf(" */\n");
+    printf("#define metamacro_foreach_cxt(MACRO, SEP, CONTEXT, ...) \\\n");
+    printf("    metamacro_concat(metamacro_foreach_cxt, metamacro_argcount(__VA_ARGS__))(MACRO, SEP, CONTEXT, __VA_ARGS__)\n");
+    ____(YES);
+}
+
+
+void print_implementation_metamacro_foreach_cxt(int limit)
+{
+    ____();
+    printf("// metamacro_foreach_cxt expansions\n");
+    printf("#define metamacro_foreach_cxt0(MACRO, SEP, CONTEXT)\n");
+    printf("#define metamacro_foreach_cxt1(MACRO, SEP, CONTEXT, _0) MACRO(0, CONTEXT, _0)\n\n");
+    
+    for (int i = 2; i <= limit; ++i)
+    {
+        printf("#define metamacro_foreach_cxt%d(MACRO, SEP, CONTEXT, ", i);
+        
+        for (int arg = 0; arg < i-1; ++arg)
+        {
+            printf("_%d, ", arg);
+        }
+        
+        printf("_%d) \\\n", i-1);
+        
+        
+        printf("    metamacro_foreach_cxt%d(MACRO, SEP, CONTEXT, ", i-1);
+        
+        
+        for (int arg = 0; arg < i-2; ++arg)
+        {
+            printf("_%d, ", arg);
+        }
+        
+        printf("_%d) \\\n", i-2);
+        
+        printf("    SEP \\\n");
+        printf("    MACRO(%d, CONTEXT, _%d)\n\n", i-1, i-1);
+    }
+    ____(YES);
+}
+
+
+#pragma mark -
 #pragma mark main
 
 int main(int argc, const char * argv[])
 {
     int limit = 20;
     
+    
+    // To make sure out asserts in the print functions do not fail.
+    if (limit < 20) limit = 20;
+    
     NSCParameterAssert(limit >= 20);
     
-    print_file_header();
-    print_include_guard_open();
+    print_file_header        ();
+    print_include_guard_open ();
     
     ///////////// Interfaces /////////////
     print_pragma_mark("'Interface' part, use these macros for your metaprogramming");
     
-    print_metamacro_exprify();
-    print_interface_metamacro_stringify();
-    print_interface_metamacro_concat();
-    print_interface_metamacro_head();
-    print_interface_metamacro_tail();
-    print_interface_metamacro_at(limit);
-    print_interface_metamacro_argcount(limit);
-    print_interface_metamacro_take(limit);
-    print_interface_metamacro_drop(limit);
+    print_metamacro_exprify                    ();
+    print_interface_metamacro_stringify        ();
+    print_interface_metamacro_concat           ();
+    print_interface_metamacro_head             ();
+    print_interface_metamacro_tail             ();
+    print_interface_metamacro_at          (limit);
+    print_interface_metamacro_argcount    (limit);
+    print_interface_metamacro_take        (limit);
+    print_interface_metamacro_drop        (limit);
+    print_metamacro_inc                   (limit);
+    print_metamacro_dec                   (limit);
+    print_metamacro_is_even               (limit);
+    print_metamacro_not                        ();
+    print_interface_metamacro_foreach_cxt (limit);
     
     ///////////// Implementations /////////////
     print_pragma_mark("'Implementation' part, do not write code which depends on any lines below");
     
-    print_implementation_metamacro_stringify();
-    print_implementation_metamacro_concat();
-    print_implementation_metamacro_head();
-    print_implementation_metamacro_tail();
-    print_implementation_metamacro_at(limit);
-    print_implementation_metamacro_argcount(limit);
-    print_implementation_metamacro_take(limit);
-    print_implementation_metamacro_drop(limit);
+    print_implementation_metamacro_stringify        ();
+    print_implementation_metamacro_concat           ();
+    print_implementation_metamacro_head             ();
+    print_implementation_metamacro_tail             ();
+    print_implementation_metamacro_at          (limit);
+    print_implementation_metamacro_argcount    (limit);
+    print_implementation_metamacro_take        (limit);
+    print_implementation_metamacro_drop        (limit);
+    print_implementation_metamacro_foreach_cxt (limit);
     
     print_include_guard_close();
     
