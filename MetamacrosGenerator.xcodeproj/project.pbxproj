@@ -7,8 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DD95876184B4E2400A90466 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD95875184B4E2400A90466 /* XCTest.framework */; };
+		5DD9587C184B4E2400A90466 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DD9587A184B4E2400A90466 /* InfoPlist.strings */; };
+		5DD9587E184B4E2400A90466 /* Metamacros100Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD9587D184B4E2400A90466 /* Metamacros100Tests.m */; };
 		7CAA8A3F183B15CC008B7E5E /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA8A3E183B15CC008B7E5E /* main.mm */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DD95880184B4E2400A90466 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CAA8A33183B15CC008B7E5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CAA8A3A183B15CC008B7E5E;
+			remoteInfo = MetamacrosGenerator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7CAA8A39183B15CC008B7E5E /* CopyFiles */ = {
@@ -23,11 +36,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5DD95873184B4E2400A90466 /* Metamacros100Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Metamacros100Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD95875184B4E2400A90466 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5DD95879184B4E2400A90466 /* Metamacros100Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Metamacros100Tests-Info.plist"; sourceTree = "<group>"; };
+		5DD9587B184B4E2400A90466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DD9587D184B4E2400A90466 /* Metamacros100Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Metamacros100Tests.m; sourceTree = "<group>"; };
+		5DD9587F184B4E2400A90466 /* Metamacros100Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Metamacros100Tests-Prefix.pch"; sourceTree = "<group>"; };
+		5DD95886184B4E4500A90466 /* metamacros_100.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros_100.h; sourceTree = "<group>"; };
 		7CAA8A3B183B15CC008B7E5E /* MetamacrosGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MetamacrosGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAA8A3E183B15CC008B7E5E /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5DD95870184B4E2400A90466 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD95876184B4E2400A90466 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CAA8A38183B15CC008B7E5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +66,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DD95874184B4E2400A90466 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DD95875184B4E2400A90466 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DD95877184B4E2400A90466 /* Metamacros100Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5DD95885184B4E4500A90466 /* Generated */,
+				5DD9587D184B4E2400A90466 /* Metamacros100Tests.m */,
+				5DD95878184B4E2400A90466 /* Supporting Files */,
+			);
+			path = Metamacros100Tests;
+			sourceTree = "<group>";
+		};
+		5DD95878184B4E2400A90466 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DD95879184B4E2400A90466 /* Metamacros100Tests-Info.plist */,
+				5DD9587A184B4E2400A90466 /* InfoPlist.strings */,
+				5DD9587F184B4E2400A90466 /* Metamacros100Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DD95885184B4E4500A90466 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				5DD95886184B4E4500A90466 /* metamacros_100.h */,
+			);
+			path = Generated;
+			sourceTree = SOURCE_ROOT;
+		};
 		7CAA8A32183B15CC008B7E5E = {
 			isa = PBXGroup;
 			children = (
 				7CAA8A3D183B15CC008B7E5E /* MetamacrosGenerator */,
+				5DD95877184B4E2400A90466 /* Metamacros100Tests */,
+				5DD95874184B4E2400A90466 /* Frameworks */,
 				7CAA8A3C183B15CC008B7E5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7CAA8A3B183B15CC008B7E5E /* MetamacrosGenerator */,
+				5DD95873184B4E2400A90466 /* Metamacros100Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +132,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5DD95872184B4E2400A90466 /* Metamacros100Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DD95884184B4E2400A90466 /* Build configuration list for PBXNativeTarget "Metamacros100Tests" */;
+			buildPhases = (
+				5DD9586F184B4E2400A90466 /* Sources */,
+				5DD95870184B4E2400A90466 /* Frameworks */,
+				5DD95871184B4E2400A90466 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DD95881184B4E2400A90466 /* PBXTargetDependency */,
+			);
+			name = Metamacros100Tests;
+			productName = Metamacros100Tests;
+			productReference = 5DD95873184B4E2400A90466 /* Metamacros100Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7CAA8A3A183B15CC008B7E5E /* MetamacrosGenerator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CAA8A44183B15CC008B7E5E /* Build configuration list for PBXNativeTarget "MetamacrosGenerator" */;
@@ -90,6 +175,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Sibers;
+				TargetAttributes = {
+					5DD95872184B4E2400A90466 = {
+						TestTargetID = 7CAA8A3A183B15CC008B7E5E;
+					};
+				};
 			};
 			buildConfigurationList = 7CAA8A36183B15CC008B7E5E /* Build configuration list for PBXProject "MetamacrosGenerator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -104,11 +194,31 @@
 			projectRoot = "";
 			targets = (
 				7CAA8A3A183B15CC008B7E5E /* MetamacrosGenerator */,
+				5DD95872184B4E2400A90466 /* Metamacros100Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5DD95871184B4E2400A90466 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD9587C184B4E2400A90466 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5DD9586F184B4E2400A90466 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD9587E184B4E2400A90466 /* Metamacros100Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CAA8A37183B15CC008B7E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,7 +229,60 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5DD95881184B4E2400A90466 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CAA8A3A183B15CC008B7E5E /* MetamacrosGenerator */;
+			targetProxy = 5DD95880184B4E2400A90466 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DD9587A184B4E2400A90466 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DD9587B184B4E2400A90466 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		5DD95882184B4E2400A90466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metamacros100Tests/Metamacros100Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Metamacros100Tests/Metamacros100Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5DD95883184B4E2400A90466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metamacros100Tests/Metamacros100Tests-Prefix.pch";
+				INFOPLIST_FILE = "Metamacros100Tests/Metamacros100Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		7CAA8A42183B15CC008B7E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -205,6 +368,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5DD95884184B4E2400A90466 /* Build configuration list for PBXNativeTarget "Metamacros100Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DD95882184B4E2400A90466 /* Debug */,
+				5DD95883184B4E2400A90466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7CAA8A36183B15CC008B7E5E /* Build configuration list for PBXProject "MetamacrosGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
