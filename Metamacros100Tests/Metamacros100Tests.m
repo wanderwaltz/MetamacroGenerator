@@ -257,4 +257,59 @@
 }
 
 
+#pragma mark -
+#pragma mark metamacro_argcount tests
+
+/// This case tests the ww_metamacro_argcount's core functionality
+- (void) test_ww_metamacro_argcount
+{
+    int x = ww_metamacro_argcount(there, are, four, arguments);
+    
+    XCTAssertEqual(x, 4, @"ww_metamacro_argcount returns the number of arguments which were passed to it");
+    
+    int y = ww_metamacro_argcount();
+    
+    XCTAssertEqual(y, 0, @"ww_metamacro_argcount properly handles the case of zero arguments provided");
+    
+    int z = ww_metamacro_argcount( 1,  2,  3,  4,  5,  6,  7,  8,  9,  10,
+                                  11, 12, 13, 14, 15, 16, 17, 18, 19,  20,
+                                  21, 22, 23, 24, 25, 26, 27, 28, 29,  30,
+                                  31, 32, 33, 34, 35, 36, 37, 38, 39,  40,
+                                  41, 42, 43, 44, 45, 46, 47, 48, 49,  50,
+                                  51, 52, 53, 54, 55, 56, 57, 58, 59,  60,
+                                  61, 62, 63, 64, 65, 66, 67, 68, 69,  70,
+                                  71, 72, 73, 74, 75, 76, 77, 78, 79,  80,
+                                  81, 82, 83, 84, 85, 86, 87, 88, 89,  90,
+                                  91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
+    
+    XCTAssertEqual(z, 100, @"ww_metamacro_argcount supports up to 100 arguments");
+}
+
+
+/// This case tests that ww_metamacro_argcount has been properly aliased to the metamacro_argcount
+- (void) test_metamacro_argcount
+{
+    int x = metamacro_argcount(there, are, four, arguments);
+    
+    XCTAssertEqual(x, 4, @"metamacro_argcount returns the number of arguments which were passed to it");
+    
+    int y = metamacro_argcount();
+    
+    XCTAssertEqual(y, 0, @"metamacro_argcount properly handles the case of zero arguments provided");
+    
+    int z = metamacro_argcount( 1,  2,  3,  4,  5,  6,  7,  8,  9,  10,
+                               11, 12, 13, 14, 15, 16, 17, 18, 19,  20,
+                               21, 22, 23, 24, 25, 26, 27, 28, 29,  30,
+                               31, 32, 33, 34, 35, 36, 37, 38, 39,  40,
+                               41, 42, 43, 44, 45, 46, 47, 48, 49,  50,
+                               51, 52, 53, 54, 55, 56, 57, 58, 59,  60,
+                               61, 62, 63, 64, 65, 66, 67, 68, 69,  70,
+                               71, 72, 73, 74, 75, 76, 77, 78, 79,  80,
+                               81, 82, 83, 84, 85, 86, 87, 88, 89,  90,
+                               91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
+    
+    XCTAssertEqual(z, 100, @"metamacro_argcount supports up to 100 arguments");
+}
+
+
 @end
