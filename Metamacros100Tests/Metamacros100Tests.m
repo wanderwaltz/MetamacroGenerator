@@ -1165,4 +1165,22 @@
 }
 
 
+#pragma mark -
+#pragma mark metamacro_not tests
+
+/// This case tests the ww_metamacro_not's core functionality
+- (void) test_ww_metamacro_not
+{
+    XCTAssertEqual(ww_metamacro_not(1), 0, @"ww_metamacro_not returns logical inverse of its arg (should be 0 or 1)");
+    XCTAssertEqual(ww_metamacro_not(0), 1, @"ww_metamacro_not returns logical inverse of its arg (should be 0 or 1)");
+}
+
+
+/// This case tests that ww_metamacro_not has been properly aliased to the metamacro_not
+- (void) test_metamacro_not
+{
+    XCTAssertEqual(metamacro_not(1), 0, @"metamacro_not returns logical inverse of its arg (should be 0 or 1)");
+    XCTAssertEqual(metamacro_not(0), 1, @"metamacro_not returns logical inverse of its arg (should be 0 or 1)");
+}
+
 @end
