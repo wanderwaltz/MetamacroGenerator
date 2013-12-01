@@ -425,4 +425,249 @@
     XCTAssertEqual(y[3], 104, @"metamacro_drop supports dropping up to 100 arguments");
 }
 
+
+#pragma mark -
+#pragma mark metamacro_inc tests
+
+/// This case tests the ww_metamacro_inc's core functionality
+- (void) test_ww_metamacro_inc
+{
+    // We have to test each value individually since macros are expanded at
+    // compile time so we cannot make a for loop or something like that here.
+    // (we actually have macros for making loops below, but they have to be
+    // also tested prior to using them here)
+    XCTAssertEqual(ww_metamacro_inc(0), 1, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc( 1),  2, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 2),  3, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 3),  4, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 4),  5, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 5),  6, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 6),  7, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 7),  8, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 8),  9, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 9), 10, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(10), 11, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(11), 12, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(12), 13, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(13), 14, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(14), 15, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(15), 16, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(16), 17, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(17), 18, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(18), 19, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(19), 20, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(20), 21, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(21), 22, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(22), 23, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(23), 24, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(24), 25, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(25), 26, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(26), 27, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(27), 28, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(28), 29, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(29), 30, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(30), 31, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(31), 32, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(32), 33, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(33), 34, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(34), 35, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(35), 36, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(36), 37, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(37), 38, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(38), 39, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(39), 40, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(40), 41, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(41), 42, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(42), 43, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(43), 44, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(44), 45, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(45), 46, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(46), 47, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(47), 48, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(48), 49, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(49), 50, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(50), 51, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(51), 52, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(52), 53, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(53), 54, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(54), 55, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(55), 56, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(56), 57, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(57), 58, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(58), 59, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(59), 60, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(60), 61, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(61), 62, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(62), 63, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(63), 64, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(64), 65, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(65), 66, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(66), 67, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(67), 68, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(68), 69, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(69), 70, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(70), 71, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(71), 72, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(72), 73, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(73), 74, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(74), 75, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(75), 76, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(76), 77, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(77), 78, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(78), 79, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(79), 80, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(80), 81, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc(81), 82, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(82), 83, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(83), 84, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(84), 85, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(85), 86, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(86), 87, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(87), 88, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(88), 89, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(89), 90, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(90), 91, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(ww_metamacro_inc( 91),  92, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 92),  93, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 93),  94, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 94),  95, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 95),  96, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 96),  97, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 97),  98, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 98),  99, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc( 99), 100, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(ww_metamacro_inc(100), 101, @"ww_metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+}
+
+
+/// This case tests that ww_metamacro_inc has been properly aliased to the metamacro_inc
+- (void) test_metamacro_inc
+{
+    // We have to test each value individually since macros are expanded at
+    // compile time so we cannot make a for loop or something like that here.
+    // (we actually have macros for making loops below, but they have to be
+    // also tested prior to using them here)
+    XCTAssertEqual(metamacro_inc(0), 1, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc( 1),  2, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 2),  3, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 3),  4, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 4),  5, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 5),  6, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 6),  7, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 7),  8, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 8),  9, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 9), 10, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(10), 11, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(11), 12, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(12), 13, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(13), 14, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(14), 15, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(15), 16, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(16), 17, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(17), 18, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(18), 19, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(19), 20, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(20), 21, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(21), 22, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(22), 23, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(23), 24, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(24), 25, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(25), 26, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(26), 27, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(27), 28, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(28), 29, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(29), 30, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(30), 31, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(31), 32, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(32), 33, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(33), 34, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(34), 35, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(35), 36, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(36), 37, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(37), 38, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(38), 39, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(39), 40, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(40), 41, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(41), 42, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(42), 43, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(43), 44, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(44), 45, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(45), 46, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(46), 47, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(47), 48, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(48), 49, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(49), 50, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(50), 51, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(51), 52, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(52), 53, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(53), 54, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(54), 55, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(55), 56, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(56), 57, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(57), 58, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(58), 59, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(59), 60, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(60), 61, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(61), 62, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(62), 63, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(63), 64, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(64), 65, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(65), 66, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(66), 67, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(67), 68, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(68), 69, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(69), 70, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(70), 71, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(71), 72, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(72), 73, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(73), 74, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(74), 75, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(75), 76, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(76), 77, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(77), 78, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(78), 79, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(79), 80, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(80), 81, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc(81), 82, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(82), 83, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(83), 84, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(84), 85, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(85), 86, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(86), 87, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(87), 88, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(88), 89, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(89), 90, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(90), 91, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    
+    XCTAssertEqual(metamacro_inc( 91),  92, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 92),  93, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 93),  94, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 94),  95, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 95),  96, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 96),  97, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 97),  98, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 98),  99, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc( 99), 100, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+    XCTAssertEqual(metamacro_inc(100), 101, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
+}
+
 @end
