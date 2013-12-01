@@ -1183,4 +1183,119 @@
     XCTAssertEqual(metamacro_not(0), 1, @"metamacro_not returns logical inverse of its arg (should be 0 or 1)");
 }
 
+
+#pragma mark -
+#pragma mark metamacro_foreach_cxt tests
+
+/// This case tests the ww_metamacro_foreach_cxt's core functionality
+- (void) test_ww_metamacro_foreach_cxt
+{
+    // This test may be cryptic if you're not familiar with ww_metamacro_foreach_cxt.
+    //
+    // So here we have a helper macro named iter which accepts three arguments.
+    // Then we use ww_metamacro_foreach the following way:
+    // 1) We pass the iter macro as the first argument. It will be expanded several
+    //    times as the result of ww_metamacro_foreach_cxt expansion.
+    // 2) We pass a delimiter as the second argument. This delimiter will be placed
+    //    between iter macro expansions.
+    // 3) We pass a context as the third argument. This context argument will be passed
+    //    to each iter macro expansion.
+    // 4) We pass a variable arg list afterwards.
+    //
+    // Result of the ww_metamacro_foreach_cxt expansion will be the following:
+    //
+    // iter(0, context, arg0) delimiter iter(1, context, arg1) delimiter ...
+    //
+    // For each of the argument listed after the context the iter will be expanded.
+    //
+    // So in the current case we have iter macro defined as a macro which
+    // declares a variable with its type specified as the context parameter,
+    // variable names will be x0, x1, ... etc. And the values of the variables
+    // will be the ones we pass to the ww_metamacro_foreach_cxt.
+    //
+    // So in the end we'll have the following:
+    //
+    // int x0 = 101; int x1 = 102; int x2 = 103;
+    
+    #define iter(index, context, value) context x##index = value
+    
+    ww_metamacro_foreach_cxt(iter, ;, int, 101, 102, 103);
+    
+    #undef iter
+    
+    XCTAssertEqual(x0, 101, @"ww_metamacro_foreach_cxt should have expanded to int x0 = 101;");
+    XCTAssertEqual(x1, 102, @"ww_metamacro_foreach_cxt should have expanded to int x1 = 102;");
+    XCTAssertEqual(x2, 103, @"ww_metamacro_foreach_cxt should have expanded to int x2 = 103;");
+   
+    int y[100] = {0};
+    
+    // This iter will set the values of the y array to the values passed to the macro.
+    #define iter(index, context, value) y[index] = value;
+    
+    ww_metamacro_foreach_cxt(iter, ;, , // empty context
+                             0,
+                              1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+                             11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                             21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+                             31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+                             41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+                             51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+                             61, 62, 63, 64, 65, 66, 67, 68, 69, 70,
+                             71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+                             81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+                             91, 92, 93, 94, 95, 96, 97, 98, 99); // Note we don't get 100 here
+                                                                  // since we're counting starting from 0
+    
+    #undef iter
+    
+    for (int i = 0; i < 100; ++i)
+    {
+        XCTAssertEqual(y[i], i, @"ww_metamacro_foreach_cxt supports up to 100 variable arguments");
+    }
+    
+}
+
+
+/// This case tests that ww_metamacro_foreach_cxt has been properly aliased to the metamacro_foreach_cxt
+- (void) test_metamacro_foreach_cxt
+{
+    // see -test_ww_metamacro_foreach_cxt for details regarding this test.
+    #define iter(index, context, value) context x##index = value
+    
+    metamacro_foreach_cxt(iter, ;, int, 101, 102, 103);
+    
+    #undef iter
+    
+    XCTAssertEqual(x0, 101, @"metamacro_foreach_cxt should have expanded to int x0 = 101;");
+    XCTAssertEqual(x1, 102, @"metamacro_foreach_cxt should have expanded to int x1 = 102;");
+    XCTAssertEqual(x2, 103, @"metamacro_foreach_cxt should have expanded to int x2 = 103;");
+    
+    int y[100] = {0};
+    
+    #define iter(index, context, value) y[index] = value;
+    
+    metamacro_foreach_cxt(iter, ;, , // empty context
+                             0,
+                             1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+                             11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                             21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+                             31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+                             41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+                             51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+                             61, 62, 63, 64, 65, 66, 67, 68, 69, 70,
+                             71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+                             81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+                             91, 92, 93, 94, 95, 96, 97, 98, 99); // Note we don't get 100 here
+                                                                  // since we're counting starting from 0
+    
+    #undef iter
+    
+    for (int i = 0; i < 100; ++i)
+    {
+        XCTAssertEqual(y[i], i, @"metamacro_foreach_cxt supports up to 100 variable arguments");
+    }
+    
+}
+
+
 @end
