@@ -916,4 +916,253 @@
 }
 
 
+#pragma mark -
+#pragma mark metamacro_is_even tests
+
+/// This case tests the ww_metamacro_is_even's core functionality
+- (void) test_ww_metamacro_is_even
+{
+    // We have to test each value individually since macros are expanded at
+    // compile time so we cannot make a for loop or something like that here.
+    // (we actually have macros for making loops below, but they have to be
+    // also tested prior to using them here)
+
+    // For the purposes of this test, 0 is considered even
+    XCTAssertEqual(ww_metamacro_is_even(0), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even( 1), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 2), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 3), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 4), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 5), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 6), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 7), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 8), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 9), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(10), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(11), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(12), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(13), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(14), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(15), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(16), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(17), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(18), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(19), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(20), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(21), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(22), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(23), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(24), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(25), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(26), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(27), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(28), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(29), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(30), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(31), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(32), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(33), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(34), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(35), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(36), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(37), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(38), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(39), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(40), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(41), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(42), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(43), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(44), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(45), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(46), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(47), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(48), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(49), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(50), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(51), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(52), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(53), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(54), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(55), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(56), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(57), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(58), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(59), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(60), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(61), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(62), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(63), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(64), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(65), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(66), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(67), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(68), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(69), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(70), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(71), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(72), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(73), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(74), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(75), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(76), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(77), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(78), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(79), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(80), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even(81), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(82), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(83), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(84), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(85), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(86), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(87), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(88), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(89), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(90), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(ww_metamacro_is_even( 91), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 92), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 93), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 94), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 95), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 96), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 97), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 98), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even( 99), 0, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(ww_metamacro_is_even(100), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+}
+
+
+/// This case tests that ww_metamacro_is_even has been properly aliased to the metamacro_is_even
+- (void) test_metamacro_is_even
+{
+    // We have to test each value individually since macros are expanded at
+    // compile time so we cannot make a for loop or something like that here.
+    // (we actually have macros for making loops below, but they have to be
+    // also tested prior to using them here)
+    
+    // For the purposes of this test, 0 is considered even
+    XCTAssertEqual(metamacro_is_even(0), 1, @"ww_metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even( 1), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 2), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 3), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 4), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 5), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 6), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 7), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 8), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 9), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(10), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(11), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(12), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(13), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(14), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(15), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(16), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(17), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(18), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(19), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(20), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(21), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(22), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(23), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(24), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(25), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(26), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(27), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(28), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(29), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(30), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(31), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(32), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(33), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(34), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(35), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(36), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(37), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(38), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(39), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(40), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(41), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(42), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(43), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(44), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(45), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(46), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(47), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(48), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(49), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(50), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(51), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(52), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(53), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(54), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(55), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(56), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(57), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(58), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(59), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(60), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(61), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(62), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(63), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(64), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(65), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(66), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(67), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(68), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(69), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(70), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(71), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(72), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(73), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(74), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(75), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(76), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(77), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(78), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(79), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(80), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even(81), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(82), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(83), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(84), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(85), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(86), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(87), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(88), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(89), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(90), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    
+    XCTAssertEqual(metamacro_is_even( 91), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 92), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 93), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 94), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 95), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 96), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 97), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 98), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even( 99), 0, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+    XCTAssertEqual(metamacro_is_even(100), 1, @"metamacro_is_even is 1 for even numbers and 0 for odd (from [0..100]");
+}
+
+
 @end
