@@ -312,4 +312,59 @@
 }
 
 
+#pragma mark -
+#pragma mark metamacro_take tests
+
+/// This case tests the ww_metamacro_take's core functionality
+- (void) test_ww_metamacro_take
+{
+    int x[] = ww_metamacro_take(3, { 1, 2, 3 }, other, arguments, will, be, ignored);
+    
+    XCTAssertEqual(x[0], 1, @"ww_metamacro_take returns the first N arguments of the arglist as a new arglist");
+    XCTAssertEqual(x[1], 2, @"ww_metamacro_take returns the first N arguments of the arglist as a new arglist");
+    XCTAssertEqual(x[2], 3, @"ww_metamacro_take returns the first N arguments of the arglist as a new arglist");
+    
+    int y[] = {ww_metamacro_take(100,
+                                   1,  2,  3,  4,  5,  6,  7,  8,  9,  10,
+                                  11, 12, 13, 14, 15, 16, 17, 18, 19,  20,
+                                  21, 22, 23, 24, 25, 26, 27, 28, 29,  30,
+                                  31, 32, 33, 34, 35, 36, 37, 38, 39,  40,
+                                  41, 42, 43, 44, 45, 46, 47, 48, 49,  50,
+                                  51, 52, 53, 54, 55, 56, 57, 58, 59,  60,
+                                  61, 62, 63, 64, 65, 66, 67, 68, 69,  70,
+                                  71, 72, 73, 74, 75, 76, 77, 78, 79,  80,
+                                  81, 82, 83, 84, 85, 86, 87, 88, 89,  90,
+                                  91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
+                                 other, arguments, will, be, ignored)};
+    
+    XCTAssertEqual(sizeof(y), sizeof(int) * 100, @"ww_metamacro_take supports taking up to 100 arguments");
+    XCTAssertEqual(y[99], 100, @"ww_metamacro_take supports taking up to 100 arguments");
+}
+
+
+/// This case tests that ww_metamacro_take has been properly aliased to the metamacro_take
+- (void) test_metamacro_take
+{
+    int x[] = metamacro_take(3, { 1, 2, 3 }, other, arguments, will, be, ignored);
+    
+    XCTAssertEqual(x[0], 1, @"metamacro_take returns the first N arguments of the arglist as a new arglist");
+    XCTAssertEqual(x[1], 2, @"metamacro_take returns the first N arguments of the arglist as a new arglist");
+    XCTAssertEqual(x[2], 3, @"metamacro_take returns the first N arguments of the arglist as a new arglist");
+    
+    int y[] = {metamacro_take(100,
+                                1,  2,  3,  4,  5,  6,  7,  8,  9,  10,
+                               11, 12, 13, 14, 15, 16, 17, 18, 19,  20,
+                               21, 22, 23, 24, 25, 26, 27, 28, 29,  30,
+                               31, 32, 33, 34, 35, 36, 37, 38, 39,  40,
+                               41, 42, 43, 44, 45, 46, 47, 48, 49,  50,
+                               51, 52, 53, 54, 55, 56, 57, 58, 59,  60,
+                               61, 62, 63, 64, 65, 66, 67, 68, 69,  70,
+                               71, 72, 73, 74, 75, 76, 77, 78, 79,  80,
+                               81, 82, 83, 84, 85, 86, 87, 88, 89,  90,
+                               91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
+                            other, arguments, will, be, ignored)};
+    
+    XCTAssertEqual(sizeof(y), sizeof(int) * 100, @"metamacro_take supports taking up to 100 arguments");
+}
+
 @end
