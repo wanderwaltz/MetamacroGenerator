@@ -670,4 +670,250 @@
     XCTAssertEqual(metamacro_inc(100), 101, @"metamacro_inc increases its arg by 1 (should be in [0 .. 100])");
 }
 
+
+#pragma mark -
+#pragma mark metamacro_dec tests
+
+/// This case tests the ww_metamacro_inc's core functionality
+- (void) test_ww_metamacro_dec
+{
+    // We have to test each value individually since macros are expanded at
+    // compile time so we cannot make a for loop or something like that here.
+    // (we actually have macros for making loops below, but they have to be
+    // also tested prior to using them here)
+    XCTAssertEqual(ww_metamacro_dec(0), -1, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec( 1), 0, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 2), 1, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 3), 2, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 4), 3, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 5), 4, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 6), 5, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 7), 6, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 8), 7, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 9), 8, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(10), 9, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(11), 10, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(12), 11, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(13), 12, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(14), 13, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(15), 14, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(16), 15, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(17), 16, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(18), 17, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(19), 18, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(20), 19, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(21), 20, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(22), 21, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(23), 22, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(24), 23, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(25), 24, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(26), 25, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(27), 26, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(28), 27, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(29), 28, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(30), 29, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(31), 30, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(32), 31, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(33), 32, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(34), 33, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(35), 34, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(36), 35, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(37), 36, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(38), 37, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(39), 38, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(40), 39, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(41), 40, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(42), 41, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(43), 42, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(44), 43, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(45), 44, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(46), 45, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(47), 46, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(48), 47, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(49), 48, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(50), 49, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(51), 50, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(52), 51, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(53), 52, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(54), 53, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(55), 54, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(56), 55, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(57), 56, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(58), 57, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(59), 58, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(60), 59, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(61), 60, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(62), 61, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(63), 62, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(64), 63, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(65), 64, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(66), 65, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(67), 66, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(68), 67, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(69), 68, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(70), 69, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(71), 70, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(72), 71, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(73), 72, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(74), 73, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(75), 74, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(76), 75, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(77), 76, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(78), 77, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(79), 78, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(80), 79, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec(81), 80, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(82), 81, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(83), 82, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(84), 83, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(85), 84, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(86), 85, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(87), 86, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(88), 87, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(89), 88, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(90), 89, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(ww_metamacro_dec( 91), 90, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 92), 91, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 93), 92, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 94), 93, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 95), 94, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 96), 95, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 97), 96, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 98), 97, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec( 99), 98, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(ww_metamacro_dec(100), 99, @"ww_metamacro_dec decreases its arg by 1 (should be in [0..100])");
+}
+
+
+/// This case tests that ww_metamacro_dec has been properly aliased to the metamacro_dec
+- (void) test_metamacro_dec
+{
+    // We have to test each value individually since macros are expanded at
+    // compile time so we cannot make a for loop or something like that here.
+    // (we actually have macros for making loops below, but they have to be
+    // also tested prior to using them here)
+    XCTAssertEqual(metamacro_dec(0), -1, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec( 1), 0, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 2), 1, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 3), 2, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 4), 3, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 5), 4, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 6), 5, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 7), 6, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 8), 7, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 9), 8, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(10), 9, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(11), 10, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(12), 11, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(13), 12, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(14), 13, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(15), 14, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(16), 15, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(17), 16, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(18), 17, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(19), 18, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(20), 19, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(21), 20, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(22), 21, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(23), 22, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(24), 23, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(25), 24, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(26), 25, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(27), 26, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(28), 27, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(29), 28, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(30), 29, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(31), 30, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(32), 31, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(33), 32, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(34), 33, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(35), 34, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(36), 35, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(37), 36, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(38), 37, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(39), 38, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(40), 39, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(41), 40, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(42), 41, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(43), 42, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(44), 43, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(45), 44, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(46), 45, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(47), 46, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(48), 47, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(49), 48, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(50), 49, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(51), 50, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(52), 51, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(53), 52, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(54), 53, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(55), 54, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(56), 55, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(57), 56, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(58), 57, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(59), 58, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(60), 59, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(61), 60, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(62), 61, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(63), 62, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(64), 63, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(65), 64, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(66), 65, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(67), 66, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(68), 67, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(69), 68, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(70), 69, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(71), 70, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(72), 71, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(73), 72, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(74), 73, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(75), 74, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(76), 75, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(77), 76, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(78), 77, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(79), 78, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(80), 79, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec(81), 80, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(82), 81, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(83), 82, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(84), 83, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(85), 84, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(86), 85, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(87), 86, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(88), 87, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(89), 88, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(90), 89, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    
+    XCTAssertEqual(metamacro_dec( 91), 90, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 92), 91, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 93), 92, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 94), 93, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 95), 94, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 96), 95, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 97), 96, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 98), 97, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec( 99), 98, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+    XCTAssertEqual(metamacro_dec(100), 99, @"metamacro_dec decreases its arg by 1 (should be in [0..100])");
+}
+
+
 @end
